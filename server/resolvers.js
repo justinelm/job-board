@@ -4,7 +4,7 @@ export const resolvers = {
     Query: {
         //parent, arguments
         // convention where parameters with underscores are unused
-        job: (_root, args) => Job.findById(args.id),
+        job: (_root, {id}) => Job.findById(id),
         jobs: () => Job.findAll()
     },
 
@@ -19,6 +19,6 @@ export const resolvers = {
         //         description: 'Fake description'
         //     }
         // }
-        company: (job) => Company.findById(job.companyId)
+        company: ({companyId}) => Company.findById(companyId)
     }
 }
