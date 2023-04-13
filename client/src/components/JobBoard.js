@@ -8,11 +8,17 @@ import { useState, useEffect } from 'react';
 function JobBoard() {
   const [jobs, setJobs] = useState([])
 
-  useState(async () => {
-    const response = await getJobs()
-    console.log(response)
-    setJobs(response)
+  // run once, when mounted
+  // useState(async () => {
+  //   const response = await getJobs()
+  //   // console.log(response)
+  //   setJobs(response)
+  // }, [])
+
+  useState(() => {
+    getJobs().then((jobs) => setJobs(jobs))
   }, [])
+
   return (
     <div>
       <h1 className="title">
