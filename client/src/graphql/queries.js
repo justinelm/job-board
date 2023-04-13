@@ -16,6 +16,7 @@ export async function getJobs() {
             }
         }
     `
-    const data = await request(GRAPHQL_URL, query)
-    console.log('data', data)
+    const { jobs } = await request(GRAPHQL_URL, query)
+    // console.log('jobs', jobs)
+    return jobs
 }
