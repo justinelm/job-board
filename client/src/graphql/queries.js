@@ -2,7 +2,7 @@ import { request, gql } from 'graphql-request'
 
 const GRAPHQL_URL = 'http://localhost:9000/graphql'
 
-async function getJobs() {
+export async function getJobs() {
     const query = gql`
         query {
             jobs {
@@ -17,5 +17,5 @@ async function getJobs() {
         }
     `
     const data = await request(GRAPHQL_URL, query)
-    console.log('data')
+    console.log('data', data)
 }
