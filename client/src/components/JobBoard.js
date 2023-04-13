@@ -16,7 +16,10 @@ function JobBoard() {
   // }, [])
 
   useState(() => {
-    getJobs().then((jobs) => setJobs(jobs))
+    // getJobs().then((jobs) => setJobs(jobs))
+    // or
+    getJobs().then(setJobs)
+
   }, [])
 
   return (
