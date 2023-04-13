@@ -3,7 +3,8 @@ import { Job, Company } from './db.js'
 export const resolvers = {
     Query: {
         //parent, arguments
-        job: (root, args) => Job.findById(args.id),
+        // convention where parameters with underscores are unused
+        job: (_root, args) => Job.findById(args.id),
         jobs: () => Job.findAll()
     },
 
