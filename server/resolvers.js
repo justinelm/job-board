@@ -1,5 +1,16 @@
 export const resolvers = {
     Query: {
-        greeting: () => 'Hello world'
+        jobs: async () => [
+            {
+                id: '1',
+                title: 'Developer',
+                // description: ''
+            },
+            {
+                id: '2',
+                title: 'Analyst',
+                description: ''
+            }
+        ],
     }
 }
